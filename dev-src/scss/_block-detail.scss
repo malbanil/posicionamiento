@@ -1,0 +1,201 @@
+.main-detail {
+	padding-bottom: 20px;
+
+	.container-detail {
+		margin: 0 auto;
+		max-width: 430px;
+
+		.container-img {
+			height: 0;
+			overflow: hidden;
+			padding: 50%;
+			position: relative;
+			text-align: center;
+			z-index: 1;
+
+			img {
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+
+		.container-list-details {
+			margin-top: -35px;
+			position: relative;
+			z-index: 2;
+
+			@include mq('xs') {
+				margin-top: -55px;
+			}
+
+			h2 {
+				font-size: 23px;
+				margin: 0;
+				text-align: center;
+
+				@include mq('xs') {
+					font-size: 38px;
+				}
+			}
+
+			h3 {
+				margin: 40px 0 0;
+				font-size: 18px;
+			}
+
+			p {
+				font-size: 14px;
+				line-height: 1.7;
+				width: 90%;
+			}
+		}
+
+		.benefits-list {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				h4 {
+					font-size: 16px;
+					margin-bottom: 5px;
+					padding-left: 35px;
+				}
+
+				li {
+					margin-bottom: 25px;
+					font-size: 14px;
+					line-height: 1.7;
+					position: relative;
+
+					a {
+						display: block;
+						color: $lightning-yellow;
+						font-size: 14px;
+						font-weight: bold;
+					}
+
+					&:before {
+						background-position: center;
+						background-size: contain;
+						background-repeat: no-repeat;
+						content: '';
+						display: block;
+						height: 25px;
+						left: 0;
+						position: absolute;
+						top: 0;
+						width: 25px;
+					}
+
+					&:nth-child(1) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-avances.svg');
+						}
+					}
+
+					&:nth-child(2) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-viajes.svg');
+						}
+					}
+
+					&:nth-child(3) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-bloqueos.svg');
+						}
+					}
+
+					&:nth-child(4) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-pagos.svg');
+						}
+					}
+
+					&:nth-child(5) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-movimientos.svg');
+						}
+					}
+
+					&:nth-child(6) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-extractos.svg');
+						}
+					}
+
+					&:nth-child(7) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-cortes.svg');
+						}
+					}
+
+					&:nth-child(8) {
+						&:before {
+							background-image: url('../images/details/app-itau-tarjetas-colombia/icon-uso-tarjeta.svg');
+						}
+					}
+				}
+			}
+
+			.read-more {
+				border-radius: 14px;
+				border: 1px solid $light-orange;
+				color: white;
+				display: inline-block;
+				font-size: 18px;
+				font-weight: bold;
+				margin-bottom: 30px;
+				margin-top: 25px;
+				padding: 10px 25px;
+				text-decoration: none;
+
+				@include mq('md') {
+					border: 3px solid $light-orange;
+				}
+			}
+		}
+
+		.breadcrumb {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				a {
+					color: white;
+					text-decoration: none;
+				}
+
+				li {
+					font-size: 13px;
+					margin-bottom: 20px;
+					position: relative;
+
+					&:before {
+						background-position: center;
+						background-size: contain;
+						background-repeat: no-repeat;
+						content: '';
+						display: block;
+						height: 10px;
+						left: 0;
+						position: absolute;
+						top: 1px;
+						width: 10px;
+					}
+
+					&.arrow {
+						padding-left: 30px;
+
+						&:before {
+							background-image: url('../images/arrow-white.svg');
+						}
+					}
+				}
+			}
+		}
+	}
+}

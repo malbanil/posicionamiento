@@ -1,0 +1,58 @@
+.phone-app {
+	background-color: $dark-orange;
+	background-image: url('../images/hand-app.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: 280px;
+	padding-bottom: 355px;
+	padding-top: 40px;
+
+	.container-phone-app {
+		margin: 0 auto;
+		max-width: 380px;
+	}
+
+	h2 {
+		margin: 0;
+	}
+
+	p {
+		font-size: 15px;
+		width: 68%;
+	}
+
+	.list-platforms {
+		p {
+			color: yellow;
+			font-size: 13px;
+			margin: 20px 0 25px;
+			width: 100%;
+		}
+
+		a {
+			display: inline-block;
+			margin-right: 5px;
+
+			img {
+				height: 40px;
+			}
+
+			&.see-more {
+				border-radius: 14px;
+				border: 1px solid $light-orange;
+				color: white;
+				display: block;
+				font-size: 18px;
+				font-weight: bold;
+				margin: 35px auto 0;
+				padding: 10px 15px;
+				text-decoration: none;
+				width: 92px;
+
+				@include mq('md') {
+					border: 3px solid $light-orange;
+				}
+			}
+		}
+	}
+}

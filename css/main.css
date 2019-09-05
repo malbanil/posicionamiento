@@ -554,10 +554,12 @@ footer {
 
 .block-search {
   padding-bottom: 30px; }
-  @media (min-width: 992px) {
-    .block-search .container-search {
-      margin: 0 auto;
-      width: 850px; } }
+  .block-search .container-search {
+    margin: 0 auto;
+    max-width: 430px; }
+    @media (min-width: 992px) {
+      .block-search .container-search {
+        max-width: 850px; } }
   .block-search .description-search {
     margin: 30px 0;
     max-width: 250px; }
@@ -724,3 +726,177 @@ footer {
       @media (min-width: 992px) {
         .main-slider .slide .read-more {
           border: 3px solid #FB911A; } }
+
+.main-detail {
+  padding-bottom: 20px; }
+  .main-detail .container-detail {
+    margin: 0 auto;
+    max-width: 430px; }
+    .main-detail .container-detail .container-img {
+      height: 0;
+      overflow: hidden;
+      padding: 50%;
+      position: relative;
+      text-align: center;
+      z-index: 1; }
+      .main-detail .container-detail .container-img img {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%; }
+    .main-detail .container-detail .container-list-details {
+      margin-top: -35px;
+      position: relative;
+      z-index: 2; }
+      @media (min-width: 480px) {
+        .main-detail .container-detail .container-list-details {
+          margin-top: -55px; } }
+      .main-detail .container-detail .container-list-details h2 {
+        font-size: 23px;
+        margin: 0;
+        text-align: center; }
+        @media (min-width: 480px) {
+          .main-detail .container-detail .container-list-details h2 {
+            font-size: 38px; } }
+      .main-detail .container-detail .container-list-details h3 {
+        margin: 40px 0 0;
+        font-size: 18px; }
+      .main-detail .container-detail .container-list-details p {
+        font-size: 14px;
+        line-height: 1.7;
+        width: 90%; }
+    .main-detail .container-detail .benefits-list ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .main-detail .container-detail .benefits-list ul h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        padding-left: 35px; }
+      .main-detail .container-detail .benefits-list ul li {
+        margin-bottom: 25px;
+        font-size: 14px;
+        line-height: 1.7;
+        position: relative; }
+        .main-detail .container-detail .benefits-list ul li a {
+          display: block;
+          color: #FBB61A;
+          font-size: 14px;
+          font-weight: bold; }
+        .main-detail .container-detail .benefits-list ul li:before {
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: '';
+          display: block;
+          height: 25px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 25px; }
+        .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-avances.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-viajes.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-bloqueos.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-pagos.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-movimientos.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-extractos.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(7):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-cortes.svg"); }
+        .main-detail .container-detail .benefits-list ul li:nth-child(8):before {
+          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-uso-tarjeta.svg"); }
+    .main-detail .container-detail .benefits-list .read-more {
+      border-radius: 14px;
+      border: 1px solid #FB911A;
+      color: white;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      margin-top: 25px;
+      padding: 10px 25px;
+      text-decoration: none; }
+      @media (min-width: 992px) {
+        .main-detail .container-detail .benefits-list .read-more {
+          border: 3px solid #FB911A; } }
+    .main-detail .container-detail .breadcrumb ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .main-detail .container-detail .breadcrumb ul a {
+        color: white;
+        text-decoration: none; }
+      .main-detail .container-detail .breadcrumb ul li {
+        font-size: 13px;
+        margin-bottom: 20px;
+        position: relative; }
+        .main-detail .container-detail .breadcrumb ul li:before {
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: '';
+          display: block;
+          height: 10px;
+          left: 0;
+          position: absolute;
+          top: 1px;
+          width: 10px; }
+        .main-detail .container-detail .breadcrumb ul li.arrow {
+          padding-left: 30px; }
+          .main-detail .container-detail .breadcrumb ul li.arrow:before {
+            background-image: url("../images/arrow-white.svg"); }
+
+.phone-app {
+  background-color: #D7450D;
+  background-image: url("../images/hand-app.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 280px;
+  padding-bottom: 355px;
+  padding-top: 40px; }
+  .phone-app .container-phone-app {
+    margin: 0 auto;
+    max-width: 380px; }
+  .phone-app h2 {
+    margin: 0; }
+  .phone-app p {
+    font-size: 15px;
+    width: 68%; }
+  .phone-app .list-platforms p {
+    color: yellow;
+    font-size: 13px;
+    margin: 20px 0 25px;
+    width: 100%; }
+  .phone-app .list-platforms a {
+    display: inline-block;
+    margin-right: 5px; }
+    .phone-app .list-platforms a img {
+      height: 40px; }
+    .phone-app .list-platforms a.see-more {
+      border-radius: 14px;
+      border: 1px solid #FB911A;
+      color: white;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 35px auto 0;
+      padding: 10px 15px;
+      text-decoration: none;
+      width: 92px; }
+      @media (min-width: 992px) {
+        .phone-app .list-platforms a.see-more {
+          border: 3px solid #FB911A; } }
+
+.relateds .container-relateds {
+  margin: 0 auto;
+  max-width: 430px; }
+
+.relateds h2 {
+  line-height: 1.3;
+  margin-bottom: 40px;
+  width: 200px; }
