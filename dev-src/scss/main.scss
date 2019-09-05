@@ -4,7 +4,11 @@
 @import 'fonts';
 @import 'variables';
 @import 'mixins';
+
+@import 'vendor/slick';
+
 @import 'general';
 @import 'header';
 @import 'footer';
 @import 'block-search';
+@import 'block-slides';
