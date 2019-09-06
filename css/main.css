@@ -732,6 +732,10 @@ footer {
   .main-detail .container-detail {
     margin: 0 auto;
     max-width: 430px; }
+    @media (min-width: 992px) {
+      .main-detail .container-detail {
+        padding-top: 40px;
+        max-width: 950px; } }
     .main-detail .container-detail .container-img {
       height: 0;
       overflow: hidden;
@@ -739,11 +743,22 @@ footer {
       position: relative;
       text-align: center;
       z-index: 1; }
+      @media (min-width: 992px) {
+        .main-detail .container-detail .container-img {
+          display: inline-block;
+          height: auto;
+          padding: 0;
+          margin-right: 20px;
+          vertical-align: top;
+          width: 41%; } }
       .main-detail .container-detail .container-img img {
         left: 0;
         position: absolute;
         top: 0;
         width: 100%; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .container-img img {
+            position: relative; } }
     .main-detail .container-detail .container-list-details {
       margin-top: -35px;
       position: relative;
@@ -751,6 +766,12 @@ footer {
       @media (min-width: 480px) {
         .main-detail .container-detail .container-list-details {
           margin-top: -55px; } }
+      @media (min-width: 992px) {
+        .main-detail .container-detail .container-list-details {
+          margin-top: 0;
+          display: inline-block;
+          vertical-align: top;
+          width: 55%; } }
       .main-detail .container-detail .container-list-details h2 {
         font-size: 23px;
         margin: 0;
@@ -758,26 +779,52 @@ footer {
         @media (min-width: 480px) {
           .main-detail .container-detail .container-list-details h2 {
             font-size: 38px; } }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .container-list-details h2 {
+            font-size: 40px;
+            text-align: left;
+            width: 440px; } }
       .main-detail .container-detail .container-list-details h3 {
         margin: 40px 0 0;
         font-size: 18px; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .container-list-details h3 {
+            margin: 20px 0 0;
+            font-size: 25px; } }
       .main-detail .container-detail .container-list-details p {
         font-size: 14px;
         line-height: 1.7;
         width: 90%; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .container-list-details p {
+            font-size: 20px;
+            width: 100%; } }
     .main-detail .container-detail .benefits-list ul {
       list-style: none;
       margin: 0;
       padding: 0; }
+      @media (min-width: 992px) {
+        .main-detail .container-detail .benefits-list ul {
+          column-count: 2;
+          column-width: 100px;
+          column-gap: 50px; } }
       .main-detail .container-detail .benefits-list ul h4 {
         font-size: 16px;
         margin-bottom: 5px;
         padding-left: 35px; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .benefits-list ul h4 {
+            font-size: 20px;
+            margin-top: 0; } }
       .main-detail .container-detail .benefits-list ul li {
         margin-bottom: 25px;
         font-size: 14px;
         line-height: 1.7;
         position: relative; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .benefits-list ul li {
+            font-size: 16px;
+            width: 195px; } }
         .main-detail .container-detail .benefits-list ul li a {
           display: block;
           color: #FBB61A;
@@ -823,19 +870,74 @@ footer {
       text-decoration: none; }
       @media (min-width: 992px) {
         .main-detail .container-detail .benefits-list .read-more {
-          border: 3px solid #FB911A; } }
-    .main-detail .container-detail .breadcrumb ul {
+          border: 3px solid #FB911A;
+          display: block;
+          margin: 0 auto;
+          width: 60px; } }
+    .main-detail .container-detail .promo-app {
+      background-image: url("../images/logo-app.png");
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 25%;
+      padding-top: 10px;
+      padding-left: 30%;
+      padding-bottom: 40px; }
+      @media (min-width: 992px) {
+        .main-detail .container-detail .promo-app {
+          background-size: 95px;
+          margin-top: 40px;
+          padding-bottom: 20px;
+          padding-left: 115px; } }
+      .main-detail .container-detail .promo-app h4 {
+        font-size: 18px;
+        margin-bottom: 3px;
+        margin-top: 0; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .promo-app h4 {
+            font-size: 22px; } }
+      .main-detail .container-detail .promo-app p {
+        font-size: 16px;
+        line-height: 1;
+        margin-top: 8px; }
+        @media (min-width: 992px) {
+          .main-detail .container-detail .promo-app p {
+            font-size: 18px; } }
+      .main-detail .container-detail .promo-app a {
+        display: inline-block;
+        margin-right: 5px; }
+        .main-detail .container-detail .promo-app a img {
+          height: 29px; }
+          @media (min-width: 992px) {
+            .main-detail .container-detail .promo-app a img {
+              height: 46px; } }
+  .main-detail .breadcrumb {
+    margin: 0 auto;
+    max-width: 430px; }
+    @media (min-width: 992px) {
+      .main-detail .breadcrumb {
+        margin-top: 40px;
+        max-width: 640px; } }
+    .main-detail .breadcrumb ul {
       list-style: none;
       margin: 0;
       padding: 0; }
-      .main-detail .container-detail .breadcrumb ul a {
+      .main-detail .breadcrumb ul a {
         color: white;
         text-decoration: none; }
-      .main-detail .container-detail .breadcrumb ul li {
+      .main-detail .breadcrumb ul li {
         font-size: 13px;
         margin-bottom: 20px;
         position: relative; }
-        .main-detail .container-detail .breadcrumb ul li:before {
+        @media (min-width: 992px) {
+          .main-detail .breadcrumb ul li {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px; } }
+        @media (min-width: 992px) {
+          .main-detail .breadcrumb ul li:first-child {
+            width: 190px; } }
+        .main-detail .breadcrumb ul li:before {
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
@@ -846,9 +948,14 @@ footer {
           position: absolute;
           top: 1px;
           width: 10px; }
-        .main-detail .container-detail .breadcrumb ul li.arrow {
+          @media (min-width: 992px) {
+            .main-detail .breadcrumb ul li:before {
+              height: 15px;
+              top: 1px;
+              width: 15px; } }
+        .main-detail .breadcrumb ul li.arrow {
           padding-left: 30px; }
-          .main-detail .container-detail .breadcrumb ul li.arrow:before {
+          .main-detail .breadcrumb ul li.arrow:before {
             background-image: url("../images/arrow-white.svg"); }
 
 .phone-app {

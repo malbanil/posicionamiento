@@ -41,7 +41,9 @@ $(document).ready(function() {
 	if($(window).width() < 991){
 		$('.relateds .container-slider').slick({
 			arrows: false,
-			dots: true
+			dots: true,
+			autoplay: true,
+			autoplaySpeed: 5000
 		})
 	}
 })
