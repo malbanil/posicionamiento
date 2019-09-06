@@ -37,4 +37,11 @@ $(document).ready(function() {
 			slidesToScroll: 3
 		})
 	}
+
+	if($(window).width() < 991){
+		$('.relateds .container-slider').slick({
+			arrows: false,
+			dots: true
+		})
+	}
 })

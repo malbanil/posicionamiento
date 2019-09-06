@@ -1,24 +1,43 @@
 .phone-app {
 	background-color: $dark-orange;
-	background-image: url('../images/hand-app.png');
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	background-size: 280px;
-	padding-bottom: 355px;
 	padding-top: 40px;
 
 	.container-phone-app {
+		background-image: url('../images/hand-app.png');
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: 280px;
 		margin: 0 auto;
 		max-width: 380px;
+		padding-bottom: 355px;
+
+		@include mq('md') {
+			background-position: left bottom;
+			background-size: contain;
+			padding-bottom: 40px;
+			padding-left: calc(100% - 530px);
+			max-width: 530px;
+		}
 	}
 
 	h2 {
 		margin: 0;
+
+		img {
+			@include mq('md') {
+				width: 100%;
+			}
+		}
 	}
 
 	p {
 		font-size: 15px;
 		width: 68%;
+
+		@include mq('md') {
+			font-size: 25px;
+			width: 52%;
+		}
 	}
 
 	.list-platforms {
@@ -27,6 +46,10 @@
 			font-size: 13px;
 			margin: 20px 0 25px;
 			width: 100%;
+
+			@include mq('md') {
+				font-size: 22px;
+			}
 		}
 
 		a {
@@ -35,6 +58,10 @@
 
 			img {
 				height: 40px;
+
+				@include mq('md') {
+					height: 55px;
+				}
 			}
 
 			&.see-more {
@@ -50,7 +77,10 @@
 				width: 92px;
 
 				@include mq('md') {
+					border-radius: 20px;
 					border: 3px solid $light-orange;
+					margin: 35px 0 0;
+					padding: 15px 25px;
 				}
 			}
 		}
