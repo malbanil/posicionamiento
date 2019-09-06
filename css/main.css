@@ -413,7 +413,28 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
   color: white;
   font-family: "itau_displayregular";
+  position: relative;
   width: 100%; }
+  body:before, body:after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    height: 150px;
+    position: absolute;
+    top: 6%;
+    width: 8px; }
+    @media (min-width: 992px) {
+      body:before, body:after {
+        top: 13%;
+        width: 11px; } }
+  body:before {
+    background-image: url("../images/vigilado.svg");
+    left: 3px; }
+  body:after {
+    background-image: url("../images/legal.svg");
+    right: 3px; }
 
 img {
   height: auto;
@@ -890,18 +911,20 @@ footer {
     @media (min-width: 992px) {
       .main-detail .breadcrumb {
         margin-top: 40px;
-        max-width: 640px; } }
+        max-width: 100%; } }
     .main-detail .breadcrumb ul {
       list-style: none;
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      text-align: center; }
       .main-detail .breadcrumb ul a {
         color: white;
         text-decoration: none; }
       .main-detail .breadcrumb ul li {
         font-size: 13px;
         margin-bottom: 20px;
-        position: relative; }
+        position: relative;
+        text-align: left; }
         @media (min-width: 992px) {
           .main-detail .breadcrumb ul li {
             font-size: 16px;
@@ -1061,8 +1084,7 @@ footer {
     @media (min-width: 992px) {
       .relateds .container-slider .slide {
         margin-left: 5px;
-        margin-right: 5px;
-        max-width: 305px; } }
+        margin-right: 5px; } }
     .relateds .container-slider .slide .image-content {
       border-radius: 20px;
       border: 1px solid #FB911A;
