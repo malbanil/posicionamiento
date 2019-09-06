@@ -656,6 +656,7 @@ footer {
       background-position: center;
       background-repeat: no-repeat;
       border: none;
+      cursor: pointer;
       height: 30px;
       overflow: hidden;
       position: absolute;
@@ -668,6 +669,7 @@ footer {
         transform: rotate(180deg);
         right: -38px; }
     .main-slider .slick-initialized .slick-dots {
+      cursor: pointer;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -1051,6 +1053,7 @@ footer {
       background-position: center;
       background-repeat: no-repeat;
       border: none;
+      cursor: pointer;
       height: 30px;
       position: absolute;
       text-indent: -9999px;
@@ -1062,6 +1065,7 @@ footer {
         transform: rotate(180deg);
         right: -38px; }
     .relateds .container-slider.slick-initialized .slick-dots {
+      cursor: pointer;
       list-style: none;
       margin: 0;
       padding: 0;
