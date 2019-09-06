@@ -619,6 +619,7 @@ footer {
         width: 100px; } }
 
 .main-slider {
+  margin-top: 40px;
   padding-bottom: 30px; }
   .main-slider .container-slider {
     margin: 0 auto;
@@ -635,6 +636,7 @@ footer {
       background-repeat: no-repeat;
       border: none;
       height: 30px;
+      overflow: hidden;
       position: absolute;
       text-indent: -9999px;
       top: 20%;
@@ -739,6 +741,7 @@ footer {
     .main-detail .container-detail .container-img {
       height: 0;
       overflow: hidden;
+      margin-top: 10px;
       padding: 50%;
       position: relative;
       text-align: center;
@@ -747,8 +750,9 @@ footer {
         .main-detail .container-detail .container-img {
           display: inline-block;
           height: auto;
-          padding: 0;
           margin-right: 20px;
+          margin-top: 0px;
+          padding: 0;
           vertical-align: top;
           width: 41%; } }
       .main-detail .container-detail .container-img img {
@@ -793,7 +797,7 @@ footer {
             font-size: 25px; } }
       .main-detail .container-detail .container-list-details p {
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.3;
         width: 90%; }
         @media (min-width: 992px) {
           .main-detail .container-detail .container-list-details p {
@@ -803,60 +807,31 @@ footer {
       list-style: none;
       margin: 0;
       padding: 0; }
-      @media (min-width: 992px) {
-        .main-detail .container-detail .benefits-list ul {
-          column-count: 2;
-          column-width: 100px;
-          column-gap: 50px; } }
       .main-detail .container-detail .benefits-list ul h4 {
-        font-size: 16px;
-        margin-bottom: 5px;
-        padding-left: 35px; }
+        font-size: 16px; }
         @media (min-width: 992px) {
           .main-detail .container-detail .benefits-list ul h4 {
-            font-size: 20px;
-            margin-top: 0; } }
+            font-size: 20px; } }
       .main-detail .container-detail .benefits-list ul li {
-        margin-bottom: 25px;
         font-size: 14px;
-        line-height: 1.7;
         position: relative; }
         @media (min-width: 992px) {
           .main-detail .container-detail .benefits-list ul li {
-            font-size: 16px;
-            width: 195px; } }
-        .main-detail .container-detail .benefits-list ul li a {
-          display: block;
-          color: #FBB61A;
-          font-size: 14px;
-          font-weight: bold; }
+            font-size: 16px; } }
         .main-detail .container-detail .benefits-list ul li:before {
           background-position: center;
           background-size: contain;
           background-repeat: no-repeat;
           content: '';
           display: block;
-          height: 25px;
           left: 0;
           position: absolute;
-          top: 0;
-          width: 25px; }
-        .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-avances.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-viajes.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-bloqueos.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-pagos.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-movimientos.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-extractos.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(7):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-cortes.svg"); }
-        .main-detail .container-detail .benefits-list ul li:nth-child(8):before {
-          background-image: url("../images/details/app-itau-tarjetas-colombia/icon-uso-tarjeta.svg"); }
+          top: 0; }
+        .main-detail .container-detail .benefits-list ul li a {
+          display: block;
+          color: #FBB61A;
+          font-size: 14px;
+          font-weight: bold; }
     .main-detail .container-detail .benefits-list .read-more {
       border-radius: 14px;
       border: 1px solid #FB911A;
@@ -872,8 +847,7 @@ footer {
         .main-detail .container-detail .benefits-list .read-more {
           border: 3px solid #FB911A;
           display: block;
-          margin: 0 auto;
-          width: 60px; } }
+          margin: 0 auto; } }
     .main-detail .container-detail .promo-app {
       background-image: url("../images/logo-app.png");
       background-repeat: no-repeat;
@@ -973,9 +947,13 @@ footer {
       .phone-app .container-phone-app {
         background-position: left bottom;
         background-size: contain;
+        max-width: none;
         padding-bottom: 40px;
         padding-left: calc(100% - 530px);
-        max-width: 530px; } }
+        width: 530px; } }
+    @media (min-width: 1200px) {
+      .phone-app .container-phone-app {
+        padding-left: calc(100% - 710px); } }
   .phone-app h2 {
     margin: 0; }
     @media (min-width: 992px) {
@@ -1129,3 +1107,236 @@ footer {
       display: inline-block;
       font-size: 20px;
       font-weight: bold; }
+
+@media (min-width: 992px) {
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul {
+    column-count: 2;
+    column-width: 100px;
+    column-gap: 50px; } }
+
+#app-tarjeta-itau .main-detail .container-detail .benefits-list ul h4 {
+  margin-bottom: 5px;
+  padding-left: 35px; }
+  @media (min-width: 992px) {
+    #app-tarjeta-itau .main-detail .container-detail .benefits-list ul h4 {
+      margin-top: 0; } }
+
+#app-tarjeta-itau .main-detail .container-detail .benefits-list ul li {
+  margin-bottom: 25px;
+  line-height: 1.7; }
+  @media (min-width: 992px) {
+    #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li {
+      width: 195px; } }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:before {
+    height: 25px;
+    width: 25px; }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-avances.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-viajes.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-bloqueos.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-pagos.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-movimientos.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-extractos.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(7):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-cortes.svg"); }
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list ul li:nth-child(8):before {
+    background-image: url("../images/details/app-itau-tarjetas-colombia/icon-uso-tarjeta.svg"); }
+
+@media (min-width: 992px) {
+  #app-tarjeta-itau .main-detail .container-detail .benefits-list .read-more {
+    width: 60px; } }
+
+#cine-colombia .main-detail .container-detail .benefits-list ul {
+  margin-top: 40px; }
+  #cine-colombia .main-detail .container-detail .benefits-list ul li {
+    padding-left: 90px;
+    margin-bottom: 50px; }
+    @media (min-width: 992px) {
+      #cine-colombia .main-detail .container-detail .benefits-list ul li {
+        padding-left: 120px;
+        margin-bottom: 80px;
+        width: 280px; } }
+    #cine-colombia .main-detail .container-detail .benefits-list ul li:before {
+      height: 45px;
+      width: 70px;
+      top: -5px; }
+      @media (min-width: 992px) {
+        #cine-colombia .main-detail .container-detail .benefits-list ul li:before {
+          height: 65px;
+          width: 115px;
+          top: -15px; } }
+    #cine-colombia .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
+      background-image: url("../images/details/2x1-cine-colombia/img-tarjeta-itau.png"); }
+    #cine-colombia .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+      background-image: url("../images/details/2x1-cine-colombia/img-tickets.png"); }
+    #cine-colombia .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
+      background-image: url("../images/details/2x1-cine-colombia/img-popcorn.png"); }
+
+@media (min-width: 992px) {
+  #cine-colombia .main-detail .container-detail .benefits-list .read-more {
+    width: 128px; } }
+
+@media (min-width: 992px) {
+  #usa-y-no-pagues .main-detail .container-detail .benefits-list p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%; } }
+
+@media (min-width: 992px) {
+  #usa-y-no-pagues .main-detail .container-detail .benefits-list .read-more {
+    margin-top: 60px;
+    width: 128px; } }
+
+@media (min-width: 992px) {
+  #dias-itau .main-detail .container-detail .benefits-list ul {
+    width: 90%; } }
+
+#dias-itau .main-detail .container-detail .benefits-list ul li {
+  border-bottom: 1px solid #FB911A;
+  padding-bottom: 20px;
+  padding-left: 70px;
+  padding-top: 20px; }
+  @media (min-width: 992px) {
+    #dias-itau .main-detail .container-detail .benefits-list ul li {
+      padding-left: 120px; } }
+  #dias-itau .main-detail .container-detail .benefits-list ul li a {
+    display: block;
+    margin-top: 10px; }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:before {
+    height: 45px;
+    width: 60px;
+    top: 22px; }
+    @media (min-width: 992px) {
+      #dias-itau .main-detail .container-detail .benefits-list ul li:before {
+        height: 55px;
+        width: 77px;
+        top: 20px; } }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:last-child {
+    border-bottom: none; }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
+    background-image: url("../images/details/dias-itau/logo-mercadolibre.png"); }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+    background-image: url("../images/details/dias-itau/logo-arturocalle.png"); }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
+    background-image: url("../images/details/dias-itau/logo-latamairlines.png"); }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
+    background-image: url("../images/details/dias-itau/logo-despegar.png"); }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
+    background-image: url("../images/details/dias-itau/logo-rappi.png"); }
+  #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
+    background-image: url("../images/details/dias-itau/logo-farmatodo.png"); }
+
+@media (min-width: 992px) {
+  #dias-itau .main-detail .container-detail .benefits-list .read-more {
+    margin-top: 60px;
+    width: 128px; } }
+
+#credito-itau .main-detail .container-detail .benefits-list ul {
+  margin-top: 30px; }
+  @media (min-width: 992px) {
+    #credito-itau .main-detail .container-detail .benefits-list ul {
+      column-count: 2;
+      column-gap: 50px;
+      column-width: 100px;
+      margin-top: 40px; } }
+  #credito-itau .main-detail .container-detail .benefits-list ul li {
+    font-weight: bold;
+    padding-left: 40px;
+    margin-bottom: 25px;
+    line-height: 1.7; }
+    @media (min-width: 992px) {
+      #credito-itau .main-detail .container-detail .benefits-list ul li {
+        width: 195px; } }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:before {
+      height: 25px;
+      width: 25px; }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
+      background-image: url("../images/details/credito-itau/icon-creditorotativo247.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+      background-image: url("../images/details/credito-itau/icon-sobregiro.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
+      background-image: url("../images/details/credito-itau/icon-creditouniversitario.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
+      background-image: url("../images/details/credito-itau/icon-libranza.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
+      background-image: url("../images/details/credito-itau/icon-creditohipotecario.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
+      background-image: url("../images/details/credito-itau/icon-creditorotativo.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(7):before {
+      background-image: url("../images/details/credito-itau/icon-creditopersonal.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(8):before {
+      background-image: url("../images/details/credito-itau/icon-creditoeducativo.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(9):before {
+      background-image: url("../images/details/credito-itau/icon-leasinghabitacional.svg"); }
+    #credito-itau .main-detail .container-detail .benefits-list ul li:nth-child(10):before {
+      background-image: url("../images/details/credito-itau/icon-creditovehiculov.svg"); }
+
+@media (min-width: 992px) {
+  #credito-itau .main-detail .container-detail .benefits-list .read-more {
+    margin-top: 60px;
+    width: 128px; } }
+
+#canales-digitales .main-detail .container-detail .benefits-list ul {
+  margin-top: 30px;
+  column-count: 2;
+  column-gap: 50px;
+  column-width: 100px; }
+  @media (min-width: 992px) {
+    #canales-digitales .main-detail .container-detail .benefits-list ul {
+      column-count: 2;
+      column-gap: 50px;
+      column-width: 100px;
+      margin-top: 40px; } }
+  #canales-digitales .main-detail .container-detail .benefits-list ul li {
+    margin-bottom: 20px; }
+    @media (min-width: 992px) {
+      #canales-digitales .main-detail .container-detail .benefits-list ul li {
+        font-size: 20px;
+        margin-bottom: 30px; } }
+    #canales-digitales .main-detail .container-detail .benefits-list ul li a {
+      color: white;
+      font-weight: normal;
+      text-decoration: none; }
+      @media (min-width: 992px) {
+        #canales-digitales .main-detail .container-detail .benefits-list ul li a {
+          font-size: 18px; } }
+  #canales-digitales .main-detail .container-detail .benefits-list ul.medios {
+    font-weight: bold; }
+  #canales-digitales .main-detail .container-detail .benefits-list ul.networks li {
+    padding-left: 40px;
+    padding-top: 5px; }
+    @media (min-width: 992px) {
+      #canales-digitales .main-detail .container-detail .benefits-list ul.networks li {
+        padding-left: 45px;
+        padding-top: 8px; } }
+    #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:before {
+      height: 25px;
+      width: 25px; }
+      @media (min-width: 992px) {
+        #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:before {
+          height: 35px;
+          width: 35px; } }
+    #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:nth-child(1):before {
+      background-image: url("../images/icon-facebook.svg"); }
+    #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:nth-child(2):before {
+      background-image: url("../images/icon-youtube.svg"); }
+    #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:nth-child(3):before {
+      background-image: url("../images/icon-instagram.svg"); }
+    #canales-digitales .main-detail .container-detail .benefits-list ul.networks li:nth-child(4):before {
+      background-image: url("../images/icon-linkedin.svg"); }
+
+@media (min-width: 992px) {
+  #canales-digitales .main-detail .container-detail .benefits-list h4 {
+    font-size: 23px; } }
+
+@media (min-width: 992px) {
+  #canales-digitales .main-detail .container-detail .benefits-list .read-more {
+    margin-top: 60px;
+    width: 128px; } }
