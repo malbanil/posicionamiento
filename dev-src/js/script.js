@@ -64,6 +64,7 @@ $(document).ready(function() {
     // ['Brand_Institucional', "Brand Institucional", "#Brand_Institucional"],
     // ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],
     ['Category_Credito', "Crédito Itaú", "credito-itau.html"],
+    // ['Category_Empresas', "Category Empresas", "#Category_Empresas"],
     // ['Categoty_Giros Internacionales', "Categoty Giros Internacionales", "#Categoty_Giros Internacionales"],
     ['Affinity_Días Itaú', "Días Itaú", "dias-itau.html"],
     // ['Affinity_Mi Itaú Efectivo', "Affinity Mi Itaú Efectivo", "#Affinity_Mi Itaú Efectivo"],
@@ -96,18 +97,23 @@ $(document).ready(function() {
       }
     });
     if (products_array.length > 0){
-      var products_data = new Array();
       var search_result_html = "<ul>";
+      var number_elements = 0;
       products_array.forEach(function(element) {
         products.forEach(function(element_product) {
           if (element == element_product[0]){
             var html_li = '<li><a href="' + element_product[2] + '">' + element_product[1] + '</a></li>';
-            search_result_html += html_li; 
+            search_result_html += html_li;
+            number_elements ++;
           };
         });
       });
       search_result_html += "</ul>";
-      $("#results-search").html(search_result_html);
+      if (number_elements > 0){
+        $("#results-search").html(search_result_html);
+      }else{
+        $("#results-search").html("");
+      }
     }else{
       $("#results-search").html("");
     }
