@@ -26,6 +26,7 @@ function js_main(){
 	return gulp.src([
 			'dev-src/js/vendor/jquery-1.12.4.min.js',
 			'dev-src/js/vendor/slick.min.js',
+      'dev-src/js/vendor/jquery.csv.min.js',
 			'dev-src/js/script.js'
 		])
 		.pipe(concat('script.js'))
