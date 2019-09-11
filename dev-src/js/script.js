@@ -112,10 +112,12 @@ $(document).ready(function() {
       if (number_elements > 0){
         $("#results-search").html(search_result_html);
       }else{
-        $("#results-search").html("");
+        search_result_html = '<ul><li>No se encontraron resultados</li></ul>'
+        $("#results-search").html(search_result_html);
       }
     }else{
-      $("#results-search").html("");
+      search_result_html = '<ul><li>No se encontraron resultados</li></ul>'
+        $("#results-search").html(search_result_html);
     }
   }
 
