@@ -1,0 +1,16 @@
+header {
+	background-color: $orange;
+	padding: 19px 0;
+
+	@include mq('md') {
+		padding: 27px 0;
+	}
+
+	.logo-itau {
+		width: 35px;
+
+		@include mq('md') {
+			width: 50px;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 /node_modules/*
-/dev-src/*
+# /dev-src/*
 
 # Windows
 Thumbs.db

@@ -1,0 +1,64 @@
+@mixin mq($mquery) {
+	$media-xxs:"(min-width : 320px)";
+	$media-xs: "(min-width : 480px)";
+	$media-sm: "(min-width: 768px)";
+	$media-md: "(min-width: 992px)";
+	$media-lg: "(min-width: 1200px)";
+	
+	@if $mquery == xxs {
+		@media #{$media-xxs} { @content; }
+	}
+	@if $mquery == xs {
+		@media #{$media-xs} { @content; }
+	}
+	@else if $mquery == sm {
+		@media #{$media-sm} { @content; }
+	}
+	@else if $mquery == md {
+		@media #{$media-md}  { @content; }
+	}
+	@else if $mquery == lg {
+		@media #{$media-lg}  { @content; }
+	}
+}
+
+// Clearfix mixin
+%clearfix {
+	*zoom: 1;
+	
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Gradients
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+	background: $start-color;
+
+	@if $orientation == 'vertical' {
+		background: -webkit-linear-gradient(top, $start-color, $end-color);
+		background: linear-gradient(to bottom, $start-color, $end-color);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+	}
+	@else if $orientation == 'horizontal' {
+		background: -webkit-linear-gradient(left, $start-color, $end-color);
+	 	background: linear-gradient(to right, $start-color, $end-color);
+	 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+	}
+	@else {
+		background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+		background: radial-gradient(ellipse at center, $start-color, $end-color);
+	}
+}
+
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}  
+}

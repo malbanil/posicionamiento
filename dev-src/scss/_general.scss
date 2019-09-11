@@ -1,0 +1,65 @@
+body {
+	@include background-gradient(rgba(215,69,13,1), rgba(245,126,19,1), 'vertical')
+	color: white;
+	font-family: $font-itau-dregular;
+	position: relative;
+	width: 100%;
+
+	&:before, &:after {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		content: '';
+		display: block;
+		height: 150px;
+		position: absolute;
+		top: 6%;
+		width: 8px;
+
+		@include mq('md') {
+			top: 13%;
+			width: 11px;
+		}
+	}
+
+	&:before {
+		background-image: url('../images/vigilado.svg');
+		left: 3px;
+	}
+
+	&:after {
+		background-image: url('../images/legal.svg');
+		right: 3px;
+	}
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+input {
+	&:focus {
+		outline: 0;
+	}
+}
+
+.container {
+	width: calc(100% - 30px);
+	padding: 0 15px;
+
+	@include mq('md') {
+		margin: 0 auto;
+		padding: 0 20px;
+		width: calc(992px - 40px);
+	}
+
+	@include mq('lg') {
+		width: calc(1160px - 40px);
+	}
+}
+
+.hide-section {
+	display: none;
+}
