@@ -186,12 +186,15 @@
 
 					li {
 						border-bottom: 1px solid $light-orange;
+						line-height: 1.4;
 						padding-bottom: 20px;
 						padding-left: 70px;
 						padding-top: 20px;
 
 						@include mq('md') {
+							padding-bottom: 15px;
 							padding-left: 120px;
+							padding-top: 15px;
 						}
 
 						a {
@@ -224,6 +227,12 @@
 						&:nth-child(2) {
 							&:before {
 								background-image: url('../images/details/dias-itau/logo-arturocalle.png');
+								left: 13px;
+								width: 40px;
+
+								@include mq('md') {
+									left: 25px;
+								}
 							}
 						}
 
@@ -242,6 +251,13 @@
 						&:nth-child(5) {
 							&:before {
 								background-image: url('../images/details/dias-itau/logo-rappi.png');
+								left: 9px;
+								top: 30px;
+								width: 50px;
+
+								@include mq('md') {
+									left: 23px;
+								}
 							}
 						}
 
@@ -285,6 +301,7 @@
 						line-height: 1.7;
 
 						@include mq('md') {
+							font-size: 18px;
 							width: 195px;
 						}
 

@@ -537,31 +537,41 @@ footer {
         vertical-align: top; } }
     footer .networks p {
       font-size: 11px;
-      font-weight: bold; }
+      font-weight: bold;
+      padding-left: 10px; }
       @media (min-width: 992px) {
         footer .networks p {
           display: inline-block;
           margin-right: 20px;
+          padding-left: 0px;
           vertical-align: top; } }
     footer .networks ul {
       list-style: none;
       margin: 0;
       padding: 0;
-      text-align: center; }
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
       @media (min-width: 992px) {
         footer .networks ul {
           display: inline-block;
           vertical-align: top; } }
       footer .networks ul li {
-        display: inline-block;
-        margin: 0 9%; }
+        display: inline-block; }
         @media (min-width: 992px) {
           footer .networks ul li {
             margin: 0 4px; } }
         footer .networks ul li:first-child {
-          margin-left: 0; }
+          margin-left: 10px; }
+          @media (min-width: 992px) {
+            footer .networks ul li:first-child {
+              margin-left: 0; } }
         footer .networks ul li:last-child {
-          margin-right: 0; }
+          margin-right: 10px; }
+          @media (min-width: 992px) {
+            footer .networks ul li:last-child {
+              margin-right: 0; } }
         footer .networks ul li a {
           background-repeat: no-repeat;
           display: block;
@@ -1442,12 +1452,15 @@ footer {
 
 #dias-itau .main-detail .container-detail .benefits-list ul li {
   border-bottom: 1px solid #FB911A;
+  line-height: 1.4;
   padding-bottom: 20px;
   padding-left: 70px;
   padding-top: 20px; }
   @media (min-width: 992px) {
     #dias-itau .main-detail .container-detail .benefits-list ul li {
-      padding-left: 120px; } }
+      padding-bottom: 15px;
+      padding-left: 120px;
+      padding-top: 15px; } }
   #dias-itau .main-detail .container-detail .benefits-list ul li a {
     display: block;
     margin-top: 10px; }
@@ -1465,13 +1478,24 @@ footer {
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(1):before {
     background-image: url("../images/details/dias-itau/logo-mercadolibre.png"); }
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
-    background-image: url("../images/details/dias-itau/logo-arturocalle.png"); }
+    background-image: url("../images/details/dias-itau/logo-arturocalle.png");
+    left: 13px;
+    width: 40px; }
+    @media (min-width: 992px) {
+      #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(2):before {
+        left: 25px; } }
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(3):before {
     background-image: url("../images/details/dias-itau/logo-latamairlines.png"); }
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(4):before {
     background-image: url("../images/details/dias-itau/logo-despegar.png"); }
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
-    background-image: url("../images/details/dias-itau/logo-rappi.png"); }
+    background-image: url("../images/details/dias-itau/logo-rappi.png");
+    left: 9px;
+    top: 30px;
+    width: 50px; }
+    @media (min-width: 992px) {
+      #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(5):before {
+        left: 23px; } }
   #dias-itau .main-detail .container-detail .benefits-list ul li:nth-child(6):before {
     background-image: url("../images/details/dias-itau/logo-farmatodo.png"); }
 
@@ -1495,6 +1519,7 @@ footer {
     line-height: 1.7; }
     @media (min-width: 992px) {
       #credito-itau .main-detail .container-detail .benefits-list ul li {
+        font-size: 18px;
         width: 195px; } }
     #credito-itau .main-detail .container-detail .benefits-list ul li:before {
       height: 25px;
