@@ -23,7 +23,7 @@
 						line-height: 1.7;
 
 						@include mq('md') {
-							width: 195px;
+							width: 200px;
 						}
 
 						&:before {
@@ -83,7 +83,7 @@
 
 				.read-more {
 					@include mq('md') {
-						width: 60px;
+						width: 63px;
 					}
 				}
 			}
@@ -141,8 +141,10 @@
 				}
 
 				.read-more {
+					min-width: 170px;
+
 					@include mq('md') {
-						width: 128px;
+						width: 172px;
 					}
 				}
 			}
@@ -165,9 +167,11 @@
 				}
 
 				.read-more {
+					min-width: 170px;
+
 					@include mq('md') {
 						margin-top: 60px;
-						width: 128px;
+						width: 172px;
 					}
 				}
 			}
@@ -270,9 +274,11 @@
 				}
 
 				.read-more {
+					min-width: 170px;
+
 					@include mq('md') {
 						margin-top: 60px;
-						width: 128px;
+						width: 172px;
 					}
 				}
 			}
@@ -366,16 +372,18 @@
 
 						&:nth-child(10) {
 							&:before {
-								background-image: url('../images/details/credito-itau/icon-creditovehiculov.svg');
+								background-image: url('../images/details/credito-itau/icon-creditovehiculo.svg');
 							}
 						}
 					}
 				}
 
 				.read-more {
+					min-width: 170px;
+
 					@include mq('md') {
 						margin-top: 60px;
-						width: 128px;
+						width: 172px;
 					}
 				}
 			}
@@ -477,9 +485,11 @@
 				}
 
 				.read-more {
+					min-width: 170px;
+					
 					@include mq('md') {
 						margin-top: 60px;
-						width: 128px;
+						width: 172px;
 					}
 				}
 			}

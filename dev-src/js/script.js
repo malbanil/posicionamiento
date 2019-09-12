@@ -67,28 +67,27 @@ $(document).ready(function() {
 	var products = new Array(
 		// ['Brand_Institucional', "Brand Institucional", "#Brand_Institucional"],
 		// ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],
-		['Category_Credito', "Crédito Itaú", "credito-itau.html"],
 		// ['Category_Empresas', "Category Empresas", "#Category_Empresas"],
 		// ['Categoty_Giros Internacionales', "Categoty Giros Internacionales", "#Categoty_Giros Internacionales"],
-		['Affinity_Días Itaú', "Días Itaú", "dias-itau.html"],
 		// ['Affinity_Mi Itaú Efectivo', "Affinity Mi Itaú Efectivo", "#Affinity_Mi Itaú Efectivo"],
-		['Affinity_Cine Colombia', "2x1 Cine Colombia", "2x1-cine-colombia.html"],
 		// ['Affinity_Mi Itaú Viajes', "Affinity Mi Itaú Viajes", "#Affinity_Mi Itaú Viajes"],
+		['Category_Credito', "Crédito Itaú", "credito-itau.html"],
+		['Affinity_Días Itaú', "Días Itaú", "dias-itau.html"],
+		['Affinity_Cine Colombia', "2x1 Cine Colombia", "2x1-cine-colombia.html"],
 		['Affinity_Canales Digitales', "Canales Digitales", "canales-digitales.html"],
 		['Affinity_App Tarjetas', "App Tarjetas", "app-itau-tarjetas-colombia.html"],
-		['Affinity_Usa y no pagues', "Usa y no pagues", "usa-y-no-pagues.html"],
-	); 
+		['Affinity_Usa y no pagues', "Usa y no pagues", "usa-y-no-pagues.html"]
+	);
 
 	var data_search = new Array();
 	//Get Data CSV
 	$.ajax({
-		type: "GET",  
+		type: "GET",
 		url: "/data/data_search.csv",
-		dataType: "text",       
-		success: function(response)  
-		{
+		dataType: "text",
+		success: function(response){
 			data_search = $.csv.toArrays(response);
-		}   
+		}
 	});
 
 	function search_product(search_text){
@@ -134,5 +133,4 @@ $(document).ready(function() {
 			$("#results-search").html("");
 		}
 	});
-
 })

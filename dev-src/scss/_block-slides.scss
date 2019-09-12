@@ -121,10 +121,11 @@
 		}
 
 		h3 {
-			font-size: 24px;
+			font-size: 23px;
 			font-weight: bold;
 
 			@include mq('md') {
+				font-size: 24px;
 				height: 55px;
 			}
 		}
@@ -133,8 +134,9 @@
 			font-size: 18px;
 
 			@include mq('md') {
-				font-size: 20px;
-				height: 115px;
+				font-size: 17px;
+				height: 120px;
+				line-height: 1.35;
 				width: 90%;
 			}
 		}
