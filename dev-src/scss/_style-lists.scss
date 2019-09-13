@@ -496,3 +496,111 @@
 		}
 	}
 }
+
+#seguro-hogar {
+	.main-detail {
+		.container-detail {
+			.container-list-details {
+				h3:nth-child(4) {
+					margin: 25px 0 14px;
+				}
+			}
+
+			.benefits-list {
+				ul {
+					li {
+						line-height: 1.5;
+						margin-bottom: 20px;
+						padding-left: 20px;
+						position: relative;
+
+						@include mq('md') {
+							line-height: 1.7;
+							padding-left: 25px;
+							width: 440px;
+						}
+
+						&:before {
+							background-color: $light-orange;
+							border-radius: 100%;
+							content: '';
+							display: block;
+							height: 10px;
+							left: 0;
+							position: absolute;
+							top: 6px;
+							width: 10px;
+
+							@include mq('md') {
+								top: 8px;
+							}
+						}
+					}
+				}
+
+				.read-more {
+					min-width: 170px;
+
+					@include mq('md') {
+						margin-top: 40px;
+						width: 172px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#credito-pymes {
+	.main-detail {
+		.container-detail {
+			.container-list-details {
+				h3:nth-child(4) {
+					margin: 25px 0 14px;
+				}
+			}
+
+			.benefits-list {
+				ul {
+					li {
+						line-height: 1.5;
+						margin-bottom: 20px;
+						padding-left: 20px;
+						position: relative;
+
+						@include mq('md') {
+							line-height: 1.7;
+							padding-left: 25px;
+							width: 440px;
+						}
+
+						&:before {
+							background-color: $light-orange;
+							border-radius: 100%;
+							content: '';
+							display: block;
+							height: 10px;
+							left: 0;
+							position: absolute;
+							top: 6px;
+							width: 10px;
+
+							@include mq('md') {
+								top: 8px;
+							}
+						}
+					}
+				}
+
+				.read-more {
+					min-width: 170px;
+
+					@include mq('md') {
+						margin-top: 40px;
+						width: 172px;
+					}
+				}
+			}
+		}
+	}
+}
