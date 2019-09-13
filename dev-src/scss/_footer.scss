@@ -16,6 +16,7 @@ footer {
 
 		@include mq('md') {
 			display: inline-block;
+			letter-spacing: -0.4px;
 			vertical-align: top;
 		}
 
@@ -87,6 +88,7 @@ footer {
 			display: inline-block;
 			float: right;
 			margin-top: 14px;
+			letter-spacing: -0.4px;
 			vertical-align: top;
 		}
 
@@ -97,7 +99,7 @@ footer {
 
 			@include mq('md') {
 				display: inline-block;
-				margin-right: 20px;
+				margin-right: 15px;
 				padding-left: 0px;
 				vertical-align: top;
 			}
