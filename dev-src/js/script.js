@@ -1,4 +1,37 @@
 $(document).ready(function() {
+	var $_MAIN_SLIDER = $('.main-slider .container-slider'),
+		$_RELATEDS_SLIDER = $('.relateds .container-slider'),
+		SETTINGS_MAIN_SLIDER = {
+			arrows: true,
+			dots: true,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [
+				{
+					breakpoint: 992,
+					settings: "unslick"
+				},
+			]
+		}
+		SETTINGS_RELATEDS_SLIDER = {
+			arrows: false,
+			dots: true,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			infinite: true,
+			responsive: [
+				{
+					breakpoint: 992,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+				},
+			]
+		}
+
 	// $(window).load(function () {
 	// 	$('.container-slider')
 	// 		.on('click', '.read-more', function(e){
@@ -17,36 +50,20 @@ $(document).ready(function() {
 	// 		})
 	// });
 
-	$('.main-slider .container-slider').slick({
-		arrows: true,
-		dots: true,
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		responsive: [
-			{
-				breakpoint: 992,
-					settings: "unslick"
-			},
-		]
-	})
+	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
+	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
 
-	$('.relateds .container-slider').slick({
-		arrows: false,
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		infinite: true,
-		responsive: [
-			{
-				breakpoint: 992,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-			},
-		]
+	$(window).on('resize', function(){
+		if($(window).width() < 992){
+			if($_MAIN_SLIDER.hasClass('slick-initialized')){
+				$_MAIN_SLIDER.slick('unslick')
+			}
+			return
+		}
+
+		if(!$_MAIN_SLIDER.hasClass('slick-initialized')){
+			return $_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
+		}
 	})
 
 	$(".input-search").focus(function(){
@@ -63,7 +80,12 @@ $(document).ready(function() {
 		$("#home").removeClass('hide-section')
 	})
 
-	//Search Functionality
+	//********************************//
+	//********************************//
+	//      SEARCH FUNCTIONALITY      //
+	//********************************//
+	//********************************//
+	
 	var products = new Array(
 		// ['Brand_Institucional', "Brand Institucional", "#Brand_Institucional"],
 		// ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],

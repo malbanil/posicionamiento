@@ -165,7 +165,7 @@
 		z-index: 4;
 
 		@include mq('md') {
-			left: 0;
+			left: calc(50% - 500px);
 			margin-top: 0px;
 			height: 637px;
 			position: absolute;
