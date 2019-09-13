@@ -89,10 +89,10 @@ $(document).ready(function() {
 	var products = new Array(
 		// ['Brand_Institucional', "Brand Institucional", "#Brand_Institucional"],
 		// ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],
-		// ['Category_Empresas', "Category Empresas", "#Category_Empresas"],
-		// ['Categoty_Giros Internacionales', "Categoty Giros Internacionales", "#Categoty_Giros Internacionales"],
 		// ['Affinity_Mi Itaú Efectivo', "Affinity Mi Itaú Efectivo", "#Affinity_Mi Itaú Efectivo"],
 		// ['Affinity_Mi Itaú Viajes', "Affinity Mi Itaú Viajes", "#Affinity_Mi Itaú Viajes"],
+		['Category_Empresas', "Crédito Pymes", "credito-pymes.html"],
+		['Categoty_Giros Internacionales', "Giros Internacionales", "giros-internacionales.html"],
 		['Category_Credito', "Crédito Itaú", "credito-itau.html"],
 		['Affinity_Días Itaú', "Días Itaú", "dias-itau.html"],
 		['Affinity_Cine Colombia', "2x1 Cine Colombia", "2x1-cine-colombia.html"],

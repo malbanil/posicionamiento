@@ -604,3 +604,142 @@
 		}
 	}
 }
+
+#giros-internacionales {
+	.main-detail {
+		.container-detail {
+			.container-list-details {
+				h3:nth-child(4) {
+					margin: 25px 0 14px;
+				}
+			}
+
+			.benefits-list {
+				ul {
+					margin-bottom: 30px;
+
+					li {
+						line-height: 1.5;
+						margin-bottom: 15px;
+						padding-left: 20px;
+						position: relative;
+
+						@include mq('md') {
+							line-height: 1.7;
+							margin-bottom: 10px;
+							font-size: 18px;
+							padding-left: 25px;
+							width: 440px;
+						}
+
+						&:before {
+							background-color: $light-orange;
+							border-radius: 100%;
+							content: '';
+							display: block;
+							height: 10px;
+							left: 0;
+							position: absolute;
+							top: 6px;
+							width: 10px;
+
+							@include mq('md') {
+								top: 8px;
+							}
+						}
+					}
+				}
+
+				.list-icons {
+					margin-bottom: 10px;
+
+					@include mq('md') {
+						margin: 45px auto 60px;
+						width: 330px;
+					}
+
+					li {
+						border-right: 1px solid $light-orange;
+						display: inline-block;
+						margin-bottom: 0;
+						padding: 10px 20px 10px 50px;
+						vertical-align: top;
+
+						@include mq('md') {
+							padding: 10px 20px 10px 60px;
+							width: auto;
+						}
+
+						&:before {
+							background-color: transparent;
+							background-repeat: no-repeat;
+							border-radius: 0;
+							height: 40px;
+							left: 0;
+							top: 3px;
+							width: 40px;
+
+							@include mq('md') {
+								height: 50px;
+								top: 1px;
+								width: 50px;
+							}
+						}
+
+						&:last-child {
+							border-right: none;
+						}
+
+						&.icon-portal {
+							&:before {
+								background-image: url('../images/details/giros-internacionales/icon-portal.svg');
+							}
+						}
+
+						&.icon-app {
+							margin-left: 10px;
+
+							&:before {
+								background-image: url('../images/details/giros-internacionales/icon-app.svg');
+								height: 35px;
+								top: 5px;
+								width: 35px;
+
+								@include mq('md') {
+									height: 40px;
+									left: 10px;
+									width: 40px;
+								}
+							}
+						}
+
+						a {
+							font-size: 12px;
+							font-weight: normal;
+							line-height: 1.2;
+							text-decoration: none;
+
+							@include mq('md') {
+								font-size: 14px;
+							}
+
+							span {
+								color: white;
+								display: block;
+							}
+						}
+					}
+				}
+
+				.read-more {
+					min-width: 170px;
+
+					@include mq('md') {
+						margin-top: 40px;
+						width: 172px;
+					}
+				}
+			}
+		}
+	}
+}
