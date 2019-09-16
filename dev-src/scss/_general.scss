@@ -61,5 +61,15 @@ input {
 }
 
 .hide-section {
-	display: none;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	padding: 0 !important;
+}
+
+.show-section {
+	height: auto;
+	opacity: 1;
+	overflow: auto;
+	transition: 5s all;
 }

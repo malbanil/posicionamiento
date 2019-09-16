@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 	var $_MAIN_SLIDER = $('.main-slider .container-slider'),
 		$_RELATEDS_SLIDER = $('.relateds .container-slider'),
 		SETTINGS_MAIN_SLIDER = {
@@ -12,7 +12,7 @@ $(document).ready(function() {
 					settings: "unslick"
 				},
 			]
-		}
+		},
 		SETTINGS_RELATEDS_SLIDER = {
 			arrows: false,
 			dots: true,
@@ -30,25 +30,48 @@ $(document).ready(function() {
 						}
 				},
 			]
-		}
+		},
+		$_MAIN_CONTENT_DETAIL = $('#container_detail')
 
-	// $(window).load(function () {
-	// 	$('.container-slider')
-	// 		.on('click', '.read-more', function(e){
-	// 			e.preventDefault()
-	// 			var $el = $(e.currentTarget),
-	// 				hash_button = $el.attr('href').substring(1)
+	if(window.location.hash) {
+		$_MAIN_CONTENT_DETAIL.load("/details/" + window.location.hash.substr(1) + ".html");
+		
+		$(".description-search").addClass('hide-section')
+		$("#results-search").addClass('hide-section')
+		$("#container_detail").removeClass('hide-section')
+		$("#container_detail").addClass('show-section')
+		$('#home').addClass('hide-section')
+		$('.relateds').removeClass('hide-section')
+		$('.phone-app').removeClass('hide-section')
+		$("html, body").animate({ scrollTop: 0 }, 1000);
+	}
 
-	// 			window.location.href = "/#" + hash_button;
+	$(window).on('load', function () {
+		$('.container-links')
+			.on('click', '.read-more', function(e){
+				e.preventDefault()
+				var $el = $(e.currentTarget),
+					hash_link = $el.attr('href')
+					hash_no_html =  hash_link.split('.html')[0]
 
-	// 			$('.block-section').each(function() {
-	// 				if($(this).attr('id') == hash_button && $(this).hasClass('hide-section')) {
-	// 					$('.block-section').addClass('hide-section')
-	// 					$(this).removeClass('hide-section').addClass('active-section')
-	// 				}
-	// 			})
-	// 		})
-	// });
+				window.location.hash = hash_no_html
+
+				$(".description-search").addClass('hide-section')
+				$("#results-search").addClass('hide-section')
+				$("#container_detail").removeClass('hide-section')
+				$("#container_detail").addClass('show-section')
+				$('#home').addClass('hide-section')
+				$('.relateds').removeClass('hide-section')
+				$('.phone-app').removeClass('hide-section')
+				$("html, body").animate({ scrollTop: 0 }, 1000);
+
+				// window.location.href = "/#" + name_html;
+				$(window).bind('hashchange', function() {
+					// newHash = window.location.hash.substr(1);
+					$_MAIN_CONTENT_DETAIL.load("/details/" + hash_link);
+				})
+			})
+	})
 
 	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
 	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
@@ -69,14 +92,15 @@ $(document).ready(function() {
 	$(".input-search").focus(function(){
 		$('.block-search').addClass('block-focused')
 		$(".container-search").addClass('move-search')
-		$("#home").removeClass('active-section')
+		// $('#container_detail').addClass('hide-section')
+		$('.relateds').addClass('hide-section')
+		$('.phone-app').addClass('hide-section')
 		$("#home").addClass('hide-section')
 	})
 
 	$(".input-search").focusout(function(){
 		$('.block-search').removeClass('block-focused')
 		$(".container-search").removeClass('move-search')
-		$("#home").addClass('active-section')
 		$("#home").removeClass('hide-section')
 	})
 
@@ -127,7 +151,7 @@ $(document).ready(function() {
 			products_array.forEach(function(element) {
 				products.forEach(function(element_product) {
 					if (element == element_product[0]){
-						var html_li = '<li><a href="' + element_product[2] + '">' + element_product[1] + '</a></li>';
+						var html_li = '<li><a class="read-more" href="' + element_product[2] + '">' + element_product[1] + '</a></li>';
 						search_result_html += html_li;
 						number_elements ++;
 					};
