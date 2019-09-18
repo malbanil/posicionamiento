@@ -32,7 +32,7 @@ function js_main(){
 			'dev-src/js/script.js'
 		])
 		.pipe(concat('script.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(gulp.dest('./js'))
 }
 

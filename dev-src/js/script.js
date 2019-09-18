@@ -33,6 +33,9 @@ $(document).ready(function(){
 		},
 		$_MAIN_CONTENT_DETAIL = $('#section_detail')
 
+	$("#section_detail").removeClass('hide-section').addClass('show-section')
+	$(".section_detail_search .description-search").addClass('hide-section').removeClass('show-section')
+
 	// if(window.location.hash) {
 	// 	$_MAIN_CONTENT_DETAIL.load("/details/" + window.location.hash.substr(1) + ".html");
 		
@@ -45,29 +48,43 @@ $(document).ready(function(){
 	// 	$("html, body").animate({ scrollTop: 0 }, 1000);
 	// }
 
-	$(window).on('load', function () {
+	// $(window).on('load', function () {
 		$('.container-links')
 			.on('click', '.read-more', function(e){
-				e.preventDefault()
 				var $el = $(e.currentTarget),
-					hash_link = $el.attr('href')
-					hash_no_html =  hash_link.split('.html')[0]
+					$val_search = $el.text()
 
-				window.location.hash = hash_no_html
+				localStorage.setItem('val_search', $val_search);
 
-				$(".description-search").addClass('hide-section')
-				$("#home").addClass('hide-section').removeClass('show-section')
-				$('.relateds').removeClass('hide-section')
-				$('.phone-app').removeClass('hide-section')
-				$("html, body").animate({ scrollTop: 0 }, 1000)
+				// e.preventDefault()
+	// 			var $el = $(e.currentTarget),
+	// 				hash_link = $el.attr('href')
+	// 				hash_no_html =  hash_link.split('.html')[0]
 
-				$_MAIN_CONTENT_DETAIL.addClass('show-section').removeClass('hide-section')
+	// 			window.location.hash = hash_no_html
 
-				$(window).bind('hashchange', function() {
-					$_MAIN_CONTENT_DETAIL.load("/details/" + hash_link);
-				})
+	// 			$(".description-search").addClass('hide-section')
+	// 			$("#home").addClass('hide-section').removeClass('show-section')
+	// 			$('.relateds').removeClass('hide-section')
+	// 			$('.phone-app').removeClass('hide-section')
+	// 			$("html, body").animate({ scrollTop: 0 }, 1000)
+
+	// 			$_MAIN_CONTENT_DETAIL.addClass('show-section').removeClass('hide-section')
+
+	// 			$(window).bind('hashchange', function() {
+	// 				$_MAIN_CONTENT_DETAIL.load("/details/" + hash_link);
+	// 			})
 			})
-	})
+	// })
+
+	if(localStorage.getItem('val_search').length > 0) {
+		if(localStorage.getItem('val_search') == 'Ver más') {
+			$('.input-search').val('')
+		}
+		else {
+			$('.input-search').val(localStorage.getItem('val_search'))
+		}
+	}
 
 	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
 	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
@@ -96,14 +113,14 @@ $(document).ready(function(){
 		// ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],
 		// ['Affinity_Mi Itaú Efectivo', "Affinity Mi Itaú Efectivo", "#Affinity_Mi Itaú Efectivo"],
 		// ['Affinity_Mi Itaú Viajes', "Affinity Mi Itaú Viajes", "#Affinity_Mi Itaú Viajes"],
-		['Category_Empresas', "Crédito Pymes", "credito-pymes.html"],
-		['Categoty_Giros Internacionales', "Giros Internacionales", "giros-internacionales.html"],
-		['Category_Credito', "Crédito Itaú", "credito-itau.html"],
-		['Affinity_Días Itaú', "Días Itaú", "dias-itau.html"],
-		['Affinity_Cine Colombia', "2x1 Cine Colombia", "2x1-cine-colombia.html"],
-		['Affinity_Canales Digitales', "Canales Digitales", "canales-digitales.html"],
-		['Affinity_App Tarjetas', "App Tarjetas", "app-itau-tarjetas-colombia.html"],
-		['Affinity_Usa y no pagues', "Usa y no pagues", "usa-y-no-pagues.html"]
+		['Category_Empresas', "Crédito Pymes", "/credito-pymes.html"],
+		['Categoty_Giros Internacionales', "Giros Internacionales", "/giros-internacionales.html"],
+		['Category_Credito', "Crédito Itaú", "/credito-itau.html"],
+		['Affinity_Días Itaú', "Días Itaú", "/dias-itau.html"],
+		['Affinity_Cine Colombia', "2x1 Cine Colombia", "/2x1-cine-colombia.html"],
+		['Affinity_Canales Digitales', "Canales Digitales", "/canales-digitales.html"],
+		['Affinity_App Tarjetas', "App Tarjetas", "/app-itau-tarjetas-colombia.html"],
+		['Affinity_Usa y no pagues', "Usa y no pagues", "/usa-y-no-pagues.html"]
 	);
 
 	var data_search = new Array();
@@ -175,35 +192,24 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#results-search").on('click', '.read-more', function(e){
-		e.preventDefault()
-		var $el = $(e.currentTarget)
-		name_category = $el.text()
-
-		$('form .input-search').val(name_category)
-		$("#results-search").addClass('hide-section').removeClass('show-section')
-
-		setTimeout(function() {
-			$('.block-search').removeClass('block-focused')
-		}, 400);
-	})
-
 	$(".input-search").focus(function(){
 		$(".description-search").removeClass('hide-section').addClass('show-section')
 		$('.block-search').addClass('block-focused')
 		$(".container-search").addClass('move-search')
 		$('#results-search').removeClass('hide-section').addClass('show-section')
 		$("#home").addClass('hide-section').removeClass('show-section')
-		$('.relateds').addClass('hide-section').removeClass('show-section')
-		$('.phone-app').addClass('hide-section').removeClass('show-section')
-		$_MAIN_CONTENT_DETAIL.addClass('hide-section').removeClass('show-section')
+		$("#section_detail").addClass('hide-section').removeClass('show-section')
+		// $('.relateds').addClass('hide-section').removeClass('show-section')
+		// $('.phone-app').addClass('hide-section').removeClass('show-section')
+		// $_MAIN_CONTENT_DETAIL.addClass('hide-section').removeClass('show-section')
 	})
 
 	$(".input-search").focusout(function(){
 		$('.block-search').removeClass('block-focused')
 		$(".container-search").removeClass('move-search')
 		$("#results-search").addClass('hide-section').removeClass('show-section')
+		$("#section_detail").removeClass('hide-section').addClass('show-section')
 		$("#home").removeClass('hide-section').addClass('show-section')
-		history.pushState("", document.title, window.location.pathname + window.location.search);
+		// history.pushState("", document.title, window.location.pathname + window.location.search);
 	})
 })
