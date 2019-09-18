@@ -33,17 +33,17 @@ $(document).ready(function(){
 		},
 		$_MAIN_CONTENT_DETAIL = $('#section_detail')
 
-	if(window.location.hash) {
-		$_MAIN_CONTENT_DETAIL.load("/details/" + window.location.hash.substr(1) + ".html");
+	// if(window.location.hash) {
+	// 	$_MAIN_CONTENT_DETAIL.load("/details/" + window.location.hash.substr(1) + ".html");
 		
-		$(".description-search").addClass('hide-section')
-		$("#results-search").addClass('hide-section')
-		$("#section_detail").removeClass('hide-section').addClass('show-section')
-		$('#home').addClass('hide-section')
-		$('.relateds').removeClass('hide-section')
-		$('.phone-app').removeClass('hide-section')
-		$("html, body").animate({ scrollTop: 0 }, 1000);
-	}
+	// 	$(".description-search").addClass('hide-section')
+	// 	$("#results-search").addClass('hide-section')
+	// 	$("#section_detail").removeClass('hide-section').addClass('show-section')
+	// 	$('#home').addClass('hide-section')
+	// 	$('.relateds').removeClass('hide-section')
+	// 	$('.phone-app').removeClass('hide-section')
+	// 	$("html, body").animate({ scrollTop: 0 }, 1000);
+	// }
 
 	$(window).on('load', function () {
 		$('.container-links')
@@ -56,16 +56,14 @@ $(document).ready(function(){
 				window.location.hash = hash_no_html
 
 				$(".description-search").addClass('hide-section')
-				$("#results-search").addClass('hide-section')
-				$("#section_detail").removeClass('hide-section').addClass('show-section')
-				$('#home').addClass('hide-section')
+				$("#home").addClass('hide-section').removeClass('show-section')
 				$('.relateds').removeClass('hide-section')
 				$('.phone-app').removeClass('hide-section')
-				$("html, body").animate({ scrollTop: 0 }, 1000);
+				$("html, body").animate({ scrollTop: 0 }, 1000)
 
-				// window.location.href = "/#" + name_html;
+				$_MAIN_CONTENT_DETAIL.addClass('show-section').removeClass('hide-section')
+
 				$(window).bind('hashchange', function() {
-					// newHash = window.location.hash.substr(1);
 					$_MAIN_CONTENT_DETAIL.load("/details/" + hash_link);
 				})
 			})
@@ -85,22 +83,6 @@ $(document).ready(function(){
 		if(!$_MAIN_SLIDER.hasClass('slick-initialized')){
 			return $_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
 		}
-	})
-
-	$(".input-search").focus(function(){
-		$('.block-search').addClass('block-focused')
-		$(".container-search").addClass('move-search')
-		$('#results-search').removeClass('hide-section').addClass('show-section')
-		$('#section_detail').removeClass('show-section').addClass('hide-section')
-		$('.relateds').addClass('hide-section')
-		$('.phone-app').addClass('hide-section')
-		$("#home").addClass('hide-section')
-	})
-
-	$(".input-search").focusout(function(){
-		$('.block-search').removeClass('block-focused')
-		$(".container-search").removeClass('move-search')
-		$("#home").removeClass('hide-section')
 	})
 
 	//********************************//
@@ -187,8 +169,9 @@ $(document).ready(function(){
 		search = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 		if (search.length >= 3){
 			search_product(search.toLowerCase());
+			$("#results-search").removeClass('hide-section').addClass('show-section')
 		}else{
-			$("#results-search").html("");
+			$("#results-search").addClass('hide-section').removeClass('show-section')
 		}
 	});
 
@@ -197,9 +180,30 @@ $(document).ready(function(){
 		var $el = $(e.currentTarget)
 		name_category = $el.text()
 
-		console.log(name_category)
-
 		$('form .input-search').val(name_category)
-		$('#results-search').addClass('hide-section')
+		$("#results-search").addClass('hide-section').removeClass('show-section')
+
+		setTimeout(function() {
+			$('.block-search').removeClass('block-focused')
+		}, 400);
+	})
+
+	$(".input-search").focus(function(){
+		$(".description-search").removeClass('hide-section').addClass('show-section')
+		$('.block-search').addClass('block-focused')
+		$(".container-search").addClass('move-search')
+		$('#results-search').removeClass('hide-section').addClass('show-section')
+		$("#home").addClass('hide-section').removeClass('show-section')
+		$('.relateds').addClass('hide-section').removeClass('show-section')
+		$('.phone-app').addClass('hide-section').removeClass('show-section')
+		$_MAIN_CONTENT_DETAIL.addClass('hide-section').removeClass('show-section')
+	})
+
+	$(".input-search").focusout(function(){
+		$('.block-search').removeClass('block-focused')
+		$(".container-search").removeClass('move-search')
+		$("#results-search").addClass('hide-section').removeClass('show-section')
+		$("#home").removeClass('hide-section').addClass('show-section')
+		history.pushState("", document.title, window.location.pathname + window.location.search);
 	})
 })

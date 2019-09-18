@@ -3,9 +3,8 @@
 	position: relative;
 
 	#results-search {
-		max-height: 0;
-		opacity: 0;
-		padding: 0;
+		max-height: 600px;
+		overflow: hidden;
 
 		ul {
 			border-radius: 20px;
@@ -16,7 +15,7 @@
 
 			@include mq('md') {
 				border: 2px solid white;
-				width: calc(100% - 130px);
+				width: calc(100% - 110px);
 			}
 
 			li {
@@ -76,6 +75,7 @@
 		margin: 30px 0;
 		max-height: 54px;
 		max-width: 250px;
+		overflow: hidden;
 
 		@include mq('md') {
 			font-size: 19px;
