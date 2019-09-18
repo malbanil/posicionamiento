@@ -84,15 +84,16 @@ $(document).ready(function(){
 	// 			})
 			})
 	// })
-
-	if(localStorage.getItem('val_search').length > 0) {
-		if(localStorage.getItem('val_search') == 'Ver más') {
-			$('.input-search').val('')
-		}
-		else {
-			$('.input-search').val(localStorage.getItem('val_search'))
-		}
-	}
+  if (localStorage.getItem("val_search") !== null) {
+  	if(localStorage.getItem('val_search').length > 0) {
+  		if(localStorage.getItem('val_search') == 'Ver más') {
+  			$('.input-search').val('')
+  		}
+  		else {
+  			$('.input-search').val(localStorage.getItem('val_search'))
+  		}
+  	}
+  }
 
 	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
 	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
