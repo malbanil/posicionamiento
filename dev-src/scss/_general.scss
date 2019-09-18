@@ -61,15 +61,17 @@ input {
 }
 
 .hide-section {
-	height: 0;
+	max-height: 0 !important;
 	opacity: 0;
 	overflow: hidden;
 	padding: 0 !important;
+	transition: 2s all ease;
 }
 
 .show-section {
-	height: auto;
-	opacity: 1;
+	max-height: auto !important;
+	opacity: 1  !important;
 	overflow: auto;
-	transition: 5s all;
+	transform: scale(1) rotateX(0deg) !important;
+	transition: 2s all ease;
 }

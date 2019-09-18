@@ -31,15 +31,14 @@ $(document).ready(function(){
 				},
 			]
 		},
-		$_MAIN_CONTENT_DETAIL = $('#container_detail')
+		$_MAIN_CONTENT_DETAIL = $('#section_detail')
 
 	if(window.location.hash) {
 		$_MAIN_CONTENT_DETAIL.load("/details/" + window.location.hash.substr(1) + ".html");
 		
 		$(".description-search").addClass('hide-section')
 		$("#results-search").addClass('hide-section')
-		$("#container_detail").removeClass('hide-section')
-		$("#container_detail").addClass('show-section')
+		$("#section_detail").removeClass('hide-section').addClass('show-section')
 		$('#home').addClass('hide-section')
 		$('.relateds').removeClass('hide-section')
 		$('.phone-app').removeClass('hide-section')
@@ -58,8 +57,7 @@ $(document).ready(function(){
 
 				$(".description-search").addClass('hide-section')
 				$("#results-search").addClass('hide-section')
-				$("#container_detail").removeClass('hide-section')
-				$("#container_detail").addClass('show-section')
+				$("#section_detail").removeClass('hide-section').addClass('show-section')
 				$('#home').addClass('hide-section')
 				$('.relateds').removeClass('hide-section')
 				$('.phone-app').removeClass('hide-section')
@@ -92,7 +90,8 @@ $(document).ready(function(){
 	$(".input-search").focus(function(){
 		$('.block-search').addClass('block-focused')
 		$(".container-search").addClass('move-search')
-		// $('#container_detail').addClass('hide-section')
+		$('#results-search').removeClass('hide-section').addClass('show-section')
+		$('#section_detail').removeClass('show-section').addClass('hide-section')
 		$('.relateds').addClass('hide-section')
 		$('.phone-app').addClass('hide-section')
 		$("#home").addClass('hide-section')
@@ -109,7 +108,7 @@ $(document).ready(function(){
 	//      SEARCH FUNCTIONALITY      //
 	//********************************//
 	//********************************//
-	
+
 	var products = new Array(
 		// ['Brand_Institucional', "Brand Institucional", "#Brand_Institucional"],
 		// ['Brand_Competencia', "Brand Competencia", "#Brand_Competencia"],
@@ -170,6 +169,19 @@ $(document).ready(function(){
 		}
 	}
 
+	$('form input').keydown(function(e){
+		if (e.keyCode == 13){
+			e.preventDefault()
+			return false
+		}
+	})
+
+	$('form input.input-submit').click(function(e){
+		e.preventDefault()
+		$(".input-search").focus()
+		return false
+	})
+
 	$(".input-search").keyup(function() {
 		var search = $(".input-search").val();
 		search = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -179,4 +191,15 @@ $(document).ready(function(){
 			$("#results-search").html("");
 		}
 	});
+
+	$("#results-search").on('click', '.read-more', function(e){
+		e.preventDefault()
+		var $el = $(e.currentTarget)
+		name_category = $el.text()
+
+		console.log(name_category)
+
+		$('form .input-search').val(name_category)
+		$('#results-search').addClass('hide-section')
+	})
 })

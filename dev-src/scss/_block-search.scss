@@ -3,6 +3,10 @@
 	position: relative;
 
 	#results-search {
+		max-height: 0;
+		opacity: 0;
+		padding: 0;
+
 		ul {
 			border-radius: 20px;
 			border: 1px solid white;
@@ -70,10 +74,12 @@
 	
 	.description-search {
 		margin: 30px 0;
+		max-height: 54px;
 		max-width: 250px;
 
 		@include mq('md') {
 			font-size: 19px;
+			max-height: 42px;
 			max-width: 610px;
 		}
 
