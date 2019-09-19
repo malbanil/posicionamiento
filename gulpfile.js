@@ -5,6 +5,7 @@ const concat = require('gulp-concat')
 const autoprefixer = require('gulp-autoprefixer')
 const cleanCSS = require('gulp-clean-css')
 const uglify = require('gulp-uglify')
+const zip = require('gulp-zip')
 
 // BrowserSync
 function browserSync(done) {
@@ -32,7 +33,7 @@ function js_main(){
 			'dev-src/js/script.js'
 		])
 		.pipe(concat('script.js'))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest('./js'))
 }
 
@@ -47,6 +48,22 @@ function general_styles(){
 		.pipe(gulp.dest('./css'))
 }
 
+//Create .Zip to Production site
+function create_zip(){
+	return gulp.src([
+			'./**',
+			'!./details/**',
+			'!./dev-src/**',
+			'!./node_modules/**',
+			'!gulpfile.js',
+			'!package-lock.json',
+			'!package.json',
+			'!README.md'
+		])
+		.pipe(zip('File-PROD.zip'))
+		.pipe(gulp.dest('./'))
+}
+
 // Watch files
 function watchFiles() {
 	gulp.watch("./dev-src/scss/*", general_styles)
@@ -54,11 +71,12 @@ function watchFiles() {
 	gulp.watch("./**/*", browserSyncReload)
 }
 
-const build = gulp.series(watchFiles, general_styles, browserSync)
+const build = gulp.series(general_styles, js_main, create_zip)
 const watch = gulp.parallel(watchFiles, general_styles, js_main, browserSync)
 
 exports.build = build
 exports.watch = watch
 exports.styles = general_styles
+exports.prodzip = create_zip
 exports.scripts = js_main
 exports.default = build
