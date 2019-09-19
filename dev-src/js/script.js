@@ -33,6 +33,22 @@ $(document).ready(function(){
 		},
 		$_MAIN_CONTENT_DETAIL = $('#section_detail')
 
+	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
+	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
+
+	$(window).on('resize', function(){
+		if($(window).width() < 992){
+			if($_MAIN_SLIDER.hasClass('slick-initialized')){
+				$_MAIN_SLIDER.slick('unslick')
+			}
+			return
+		}
+
+		if(!$_MAIN_SLIDER.hasClass('slick-initialized')){
+			return $_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
+		}
+	})
+
 	$("#section_detail").removeClass('hide-section').addClass('show-section')
 	$(".section_detail_search .description-search").addClass('hide-section').removeClass('show-section')
 
@@ -54,23 +70,7 @@ $(document).ready(function(){
 			}
 		}
 	}
-
-	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
-	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
-
-	$(window).on('resize', function(){
-		if($(window).width() < 992){
-			if($_MAIN_SLIDER.hasClass('slick-initialized')){
-				$_MAIN_SLIDER.slick('unslick')
-			}
-			return
-		}
-
-		if(!$_MAIN_SLIDER.hasClass('slick-initialized')){
-			return $_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
-		}
-	})
-
+	
 	//********************************//
 	//********************************//
 	//      SEARCH FUNCTIONALITY      //
