@@ -185,6 +185,7 @@ $(document).ready(function(){
 		$('#results-search').removeClass('hide-section').addClass('show-section')
 		$("#home").addClass('hide-section').removeClass('show-section')
 		$("#section_detail").addClass('hide-section').removeClass('show-section')
+		$(".phone-app-home").addClass('hide-section').removeClass('show-section')
 	})
 
 	$(".input-search").focusout(function(){
@@ -193,5 +194,6 @@ $(document).ready(function(){
 		$("#results-search").addClass('hide-section').removeClass('show-section')
 		$("#section_detail").removeClass('hide-section').addClass('show-section')
 		$("#home").removeClass('hide-section').addClass('show-section')
+		$(".phone-app-home").removeClass('hide-section').addClass('show-section')
 	})
 })
