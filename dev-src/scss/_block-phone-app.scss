@@ -92,4 +92,68 @@
 			}
 		}
 	}
+
+	&.phone-app-home {
+		.container-phone-app {
+			
+			@include mq('md') {
+				padding-bottom: 100px;
+			}
+		}
+
+		p {
+			font-size: 24px;
+			width: 100%;
+
+			@include mq('md') {
+				font-size: 27.5px;
+			}
+
+			strong {
+				@include mq('md') {
+					font-size: 29px;
+				}
+			}
+
+			.new-account {
+				font-size: 39px;
+				line-height: 1;
+
+				@include mq('md') {
+					font-size: 36px;
+				}
+			}
+		}
+
+		.list-platforms {
+			p, a {
+				@include mq('md') {
+					display: inline-block;
+					vertical-align: middle;
+					width: auto;
+				}
+			}
+
+			p {
+				margin-right: 20px;
+
+				@include mq('md') {
+					font-size: 22px;
+				}
+			}
+
+			a {
+				img {
+					@include mq('md') {
+						height: 45px;
+					}
+				}
+			}
+
+			.see-more {
+				display: block;
+				width: 160px;
+			}
+		}
+	}
 }

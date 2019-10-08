@@ -82,10 +82,20 @@
 			margin-bottom: 10px;
 			max-width: none;
 
+			&:focus {
+				outline: 0;
+			}
+
 			@include mq('md') {
 				margin-left: 5px;
 				margin-right: 5px;
 				// max-width: 305px;
+				transform: scale(0.96);
+				transition: all 0.5s;
+
+				&:hover {
+					transform: scale(1);
+				}
 			}
 
 			.image-content {
