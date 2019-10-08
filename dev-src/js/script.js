@@ -128,7 +128,7 @@ $(document).ready(function(){
 	//Get Data CSV
 	$.ajax({
 		type: "GET",
-		url: "/data/data_search.csv",
+		url: "data/data_search.csv",
 		dataType: "text",
 		success: function(response){
 			data_search = $.csv.toArrays(response);
