@@ -31,7 +31,10 @@ $(document).ready(function(){
 				},
 			]
 		},
-		$_MAIN_CONTENT_DETAIL = $('#section_detail')
+		$_MAIN_CONTENT_DETAIL = $('#section_detail'),
+		VERSION_DEV = 'OCT-10-2019'
+
+	$('body').addClass(VERSION_DEV)
 
 	$_MAIN_SLIDER.slick(SETTINGS_MAIN_SLIDER)
 	$_RELATEDS_SLIDER.slick(SETTINGS_RELATEDS_SLIDER)
