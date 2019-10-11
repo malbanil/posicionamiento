@@ -58,7 +58,8 @@ function create_zip(){
 			'!gulpfile.js',
 			'!package-lock.json',
 			'!package.json',
-			'!README.md'
+			'!README.md',
+			'!File-PROD.zip'
 		])
 		.pipe(zip('File-PROD.zip'))
 		.pipe(gulp.dest('./'))
