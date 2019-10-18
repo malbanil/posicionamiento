@@ -32,7 +32,7 @@ $(document).ready(function(){
 			]
 		},
 		$_MAIN_CONTENT_DETAIL = $('#section_detail'),
-		VERSION_DEV = 'OCT-10-2019'
+		VERSION_DEV = 'OCT-18-2019'
 
 	$('body').addClass(VERSION_DEV)
 
