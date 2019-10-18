@@ -97,14 +97,23 @@ $(document).ready(function(){
 
 	var data_search = new Array();
 	//Get Data CSV
-	$.ajax({
+  //Change CSV to JSON
+	/*$.ajax({
 		type: "GET",
 		url: "data/data_search.csv",
 		dataType: "text",
 		success: function(response){
 			data_search = $.csv.toArrays(response);
 		}
-	});
+	});*/
+
+  $.getJSON("data/data_search.json", function(response) {
+    data_search = [];
+    for(var i in response){
+      element = response[i];
+      data_search.push([element.group, element.keyword]);
+    }
+  });
 
 	function search_product(search_text){
 		var products_array = new Array();
