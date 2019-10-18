@@ -113,12 +113,15 @@ $(document).ready(function(){
       element = response[i];
       data_search.push([element.group, element.keyword]);
     }
+    console.log(data_search);
   });
 
 	function search_product(search_text){
 		var products_array = new Array();
 		data_search.forEach(function(element) {
-			if (element[1].indexOf(search_text) != -1){
+      console.log(search_text);
+			if (element[1].search(search_text) != -1){
+        console.log(element[1]);
 				if (products_array.indexOf(element[0]) == -1) {
 					products_array.push(element[0]);
 				} 
@@ -151,7 +154,7 @@ $(document).ready(function(){
 
 	accentsTidy = function(s){
 		var r=s.toLowerCase();
-		r = r.replace(new RegExp("\\s", 'g'),"");
+		//r = r.replace(new RegExp("\\s", 'g'),"");
 		r = r.replace(new RegExp("[àáâãäå]", 'g'),"a");
 		r = r.replace(new RegExp("æ", 'g'),"ae");
 		r = r.replace(new RegExp("ç", 'g'),"c");
@@ -162,7 +165,7 @@ $(document).ready(function(){
 		r = r.replace(new RegExp("œ", 'g'),"oe");
 		r = r.replace(new RegExp("[ùúûü]", 'g'),"u");
 		r = r.replace(new RegExp("[ýÿ]", 'g'),"y");
-		r = r.replace(new RegExp("\\W", 'g'),"");
+		//r = r.replace(new RegExp("\\W", 'g'),"");
 		return r;
 	}
 
@@ -191,13 +194,13 @@ $(document).ready(function(){
 	});
 
 	$(".input-search").focus(function(){
-		$(".description-search").removeClass('hide-section').addClass('show-section')
+		//$(".description-search").removeClass('hide-section').addClass('show-section')
 		$('.block-search').addClass('block-focused')
 		$(".container-search").addClass('move-search')
-		$('#results-search').removeClass('hide-section').addClass('show-section')
+		//$('#results-search').removeClass('hide-section').addClass('show-section')
 		$("#home").addClass('hide-section').removeClass('show-section')
-		$("#section_detail").addClass('hide-section').removeClass('show-section')
-		$(".phone-app-home").addClass('hide-section').removeClass('show-section')
+		//$("#section_detail").addClass('hide-section').removeClass('show-section')
+		//$(".phone-app-home").addClass('hide-section').removeClass('show-section')
 	})
 
 	$(".input-search").focusout(function(){
