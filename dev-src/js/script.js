@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 	var data_search = new Array();
 	//Get Data CSV
-  //Change CSV to JSON
+	//Change CSV to JSON
 	/*$.ajax({
 		type: "GET",
 		url: "data/data_search.csv",
@@ -107,21 +107,18 @@ $(document).ready(function(){
 		}
 	});*/
 
-  $.getJSON("data/data_search.json", function(response) {
-    data_search = [];
-    for(var i in response){
-      element = response[i];
-      data_search.push([element.group, element.keyword]);
-    }
-    console.log(data_search);
-  });
+	$.getJSON("data/data_search.json", function(response) {
+		data_search = [];
+		for(var i in response){
+			element = response[i];
+			data_search.push([element.group, element.keyword]);
+		}
+	});
 
 	function search_product(search_text){
 		var products_array = new Array();
 		data_search.forEach(function(element) {
-      console.log(search_text);
 			if (element[1].search(search_text) != -1){
-        console.log(element[1]);
 				if (products_array.indexOf(element[0]) == -1) {
 					products_array.push(element[0]);
 				} 
@@ -194,14 +191,19 @@ $(document).ready(function(){
 	});
 
 	$(".input-search").focus(function(){
-		//$(".description-search").removeClass('hide-section').addClass('show-section')
 		$('.block-search').addClass('block-focused')
 		$(".container-search").addClass('move-search')
-		//$('#results-search').removeClass('hide-section').addClass('show-section')
 		$("#home").addClass('hide-section').removeClass('show-section')
-		//$("#section_detail").addClass('hide-section').removeClass('show-section')
-		//$(".phone-app-home").addClass('hide-section').removeClass('show-section')
 	})
+
+	if($('#section_detail').hasClass('show-section')){
+		$(".input-search").focus(function(){
+			$(".description-search").removeClass('hide-section').addClass('show-section')
+			$('#results-search').removeClass('hide-section').addClass('show-section')
+			$("#section_detail").addClass('hide-section').removeClass('show-section')
+			$(".phone-app-home").addClass('hide-section').removeClass('show-section')
+		})
+	}
 
 	$(".input-search").focusout(function(){
 		$('.block-search').removeClass('block-focused')
